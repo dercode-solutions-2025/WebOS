@@ -1,0 +1,66 @@
+<!--
+Welcome to WebOS, a small hub for basic HTML apps.
+=== Devlog ===
+10/2/26: Made the basic UI, and some testing apps.
+-->
+<!DOCTYPE html>
+
+<head>
+<title>WebOS</title>
+</head>
+
+<body>
+
+<div class="app_parent">
+ 
+    <button class="app" onclick="clearS();">
+    <b>Clear Screen</b>
+  </button>
+    
+    <button class="app" onclick="openCalculator();">
+    <b>Calculator</b>
+  </button>
+    
+    <button class="app" onclick="openIFrame();">
+    <b>IFrame</b>
+  </button>
+</div>
+
+</body>
+
+<style>
+.app {
+ background-color: white;
+    height: 100px;
+    width: 100px;
+    border: 2px solid black;
+    border-radius: 20%;
+    font-family: "monospace";
+}
+
+.app_parent {
+ display: flex;
+    gap: 10px;
+}
+
+iframe {
+ border: 2px solid black;
+    height: 1000px;
+    width: 1000px;
+}
+</style>
+
+<script>
+function clearS() {
+ document.body.innerHTML = '';
+}
+
+function openCalculator() {
+ prompt("The answer is: " + eval(prompt("Enter an equation:")));
+}
+
+function openIFrame(link) {
+ let ifr = `<iframe src='${prompt("Enter a link: ")}'></iframe>`;
+    document.write(ifr);
+}
+</script>
